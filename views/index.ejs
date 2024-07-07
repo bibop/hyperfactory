@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_head.ejs') %>
+  <body>
+<%- include('partials/_header.ejs') %>
+    <main role="main" class="container mt-4">
+      <div class="text-center">
+        <h1>HyperFactory</h1>
+        <div class="row mt-5">
+          <div class="col">
+            <a href="/projectEditor" class="btn btn-primary btn-lg" role="button">PROJECTS EDITOR</a>
+          </div>
+          <div class="col">
+            <a href="/agents" class="btn btn-secondary btn-lg" role="button">AGENTS EDITOR</a>
+          </div>
+          <div class="col">
+            <a href="/skillsEditor" class="btn btn-success btn-lg" role="button">SKILLS EDITOR</a>
+          </div>
+          <div class="col">
+            <button onclick="window.close();" class="btn btn-danger btn-lg">EXIT</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+<%- include('partials/_footer.ejs') %>
+  <script src="/js/main.js"></script>
+</html>

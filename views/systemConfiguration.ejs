@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_head.ejs') %>
+<body>
+<%- include('partials/_header.ejs') %>
+<div class="container mt-4">
+    <h1>System Configuration</h1>
+    <p>Use this interface to configure system settings.</p>
+    <form action="/systemConfiguration" method="POST">
+        <div class="mb-3">
+            <label for="notificationPreferences" class="form-label">Notification Preferences</label>
+            <select class="form-select" id="notificationPreferences" name="notificationPreferences" required>
+                <option value="Email">Email</option>
+                <option value="SMS">SMS</option>
+                <option value="None">None</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="agentAutoCreation" class="form-label">Agent Auto-Creation Rules</label>
+            <select class="form-select" id="agentAutoCreation" name="agentAutoCreation" required>
+                <option value="Enabled">Enabled</option>
+                <option value="Disabled">Disabled</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Configuration</button>
+    </form>
+</div>
+<%- include('partials/_footer.ejs') %>
+<script src="/js/main.js"></script>
+</body>
+</html>

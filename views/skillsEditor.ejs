@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Skills Editor</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Skills Editor</h1>
+        <form id="skillsForm">
+            <div class="form-group">
+                <label for="skillName">Skill Name:</label>
+                <input type="text" id="skillName" name="skillName" required>
+            </div>
+            <div class="form-group">
+                <label for="skillLevel">Skill Level:</label>
+                <input type="number" id="skillLevel" name="skillLevel" min="1" max="5" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Skill</button>
+        </form>
+        <div id="skillsList">
+            <h2>Existing Skills</h2>
+            <!-- Skills will be listed here -->
+        </div>
+    </div>
+    <script src="/js/skillsEditor.js"></script>
+</body>
+</html>

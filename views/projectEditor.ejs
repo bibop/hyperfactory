@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_head.ejs') %>
+<body>
+<%- include('partials/_header.ejs') %>
+<div class="container mt-4">
+    <h1>Project Editor</h1>
+    <p>Use this interface to manage your projects comprehensively.</p>
+    <form action="/projects" method="POST">
+        <div class="mb-3">
+            <label for="projectName" class="form-label">Project Name</label>
+            <input type="text" class="form-control" id="projectName" name="projectName" required>
+        </div>
+        <div class="mb-3">
+            <label for="projectDescription" class="form-label">Project Description</label>
+            <textarea class="form-control" id="projectDescription" name="projectDescription" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="projectStatus" class="form-label">Project Status</label>
+            <select class="form-select" id="projectStatus" name="projectStatus" required>
+                <option value="Planning">Planning</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="assignAgents" class="form-label">Assign Agents</label>
+            <select multiple class="form-control" id="assignAgents" name="assignAgents">
+                <% agents.forEach(function(agent) { %>
+                    <option value="<%= agent._id %>"><%= agent.name %></option>
+                <% }); %>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Project</button>
+    </form>
+</div>
+<%- include('partials/_footer.ejs') %>
+<script src="/js/main.js"></script>
+</body>
+</html>

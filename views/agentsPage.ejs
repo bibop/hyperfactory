@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/_head.ejs %>
+    <title>Agents Page</title>
+</head>
+<body>
+    <% include partials/_header.ejs %>
+    <div class="container mt-4">
+        <h1>Agents Management</h1>
+        <p>Use the form below to create a new agent.</p>
+        <form action="/agents" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="expertiseArea" class="form-label">Expertise Area</label>
+                <input type="text" class="form-control" id="expertiseArea" name="expertiseArea" required>
+            </div>
+            <div class="mb-3">
+                <label for="role" class="form-label">Role</label>
+                <select class="form-select" id="role" name="role" required>
+                    <option value="boss">Boss</option>
+                    <option value="professor">Professor</option>
+                    <option value="critic">Critic</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+                <select class="form-select" id="gender" name="gender" required>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Agent</button>
+        </form>
+    </div>
+    <% include partials/_footer.ejs %>
+    <script src="/js/main.js"></script>
+</body>
+</html>
