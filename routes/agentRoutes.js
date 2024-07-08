@@ -6,9 +6,9 @@ const Agent = require('../models/Agent');
 
 // Route to create a new agent
 router.post('/agents', async (req, res) => {
-  const { name, expertiseArea, role, gender } = req.body;
+  const { name, expertiseArea, role, gender, description, specialization } = req.body;
   try {
-    const result = await createAgent({ name, expertiseArea, role, gender });
+    const result = await createAgent({ name, expertiseArea, role, gender, description, specialization });
     if (result.success) {
       console.log(`Agent created: ${result.agent.name}`);
       res.status(201).json(result.agent);
