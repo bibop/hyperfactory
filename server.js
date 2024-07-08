@@ -8,6 +8,7 @@ const authRoutes = require("./routes/authRoutes");
 const projectRoutes = require('./routes/projectRoutes'); // Added project routes
 const feedbackRoutes = require('./routes/feedbackRoutes'); // Added feedback routes
 const agentRoutes = require('./routes/agentRoutes'); // Added agent routes
+const ragRoutes = require('./routes/ragRoutes'); // Added RAG routes
 const cors = require('cors'); // Required for CORS middleware
 
 if (!process.env.DATABASE_URL || !process.env.SESSION_SECRET) {
@@ -90,6 +91,9 @@ app.use(feedbackRoutes); // Integrated feedback routes
 
 // Agent Routes
 app.use(agentRoutes); // Integrated agent routes
+
+// RAG Routes
+app.use(ragRoutes); // Integrated RAG routes
 
 // Skills Editor Route
 app.get('/skillsEditor', (req, res) => {
